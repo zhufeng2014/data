@@ -1,0 +1,4 @@
+app/templates_c
+assets/vue-component/node_modules
+/composer.lock
+vendor/

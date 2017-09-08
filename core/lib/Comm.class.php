@@ -443,4 +443,18 @@ class core_lib_Comm
         );
         return $productKeyToName;
     }
+
+    /**
+     * 返回JSON数据，支持jsoncallback
+     */
+    public function json($data = array())
+    {
+
+        $callback = core_lib_Comm::getStr($_REQUEST['callback']);
+        if (empty($callback)) {
+            return json_encode($data);
+        } else {
+            return $callback . '(' . json_encode($data) . ')';
+        }
+    }
 }
